@@ -2644,6 +2644,62 @@ format = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validat
 format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "uri-template", "webcolors (>=24.6.0)"]
 
 [[package]]
+name = "jsonschema-rs"
+version = "0.28.1"
+description = "A high-performance JSON Schema validator for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:2b368e1dc581194371cfd160af7349eca67217e9af160c957b0ca82622024379"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:7cfe0da08b5073adbb5580edb5a25b85f5a1087360fdd173ba11c995582a307e"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:6b563c6a366b747ecd846b5e9e4b0a00473ca38a5f07be62f6f85a21fb185593"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8bd6c13298332bcd00bd2576e62d7b91b312dd4573ab432ca6a4b246e6c08f87"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:da2338b203e642c66f547e8104d84525cb8b98e6357630e897d44ffa12f6004b"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-win32.whl", hash = "sha256:618618e41dcaee55a1397fc398ec5291924af6f9e58a3fb320cdd953750d22a3"},
+    {file = "jsonschema_rs-0.28.1-cp310-cp310-win_amd64.whl", hash = "sha256:8f3715645a4eec00e2c91fc524595357b196e725115a2abdd54bd2204ebfa92d"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:40adb8c168990baeae4ae0e6ee2c87cd244ef66490bcd56ba712b729a78f6b8c"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:d0a18b8d4cb57732b948d0b410d1e6067cad30c6b912e369d22a1128a28d1236"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:3f5522073faa5e9c41f1bf6fe3237367e01c15aba348d8a521e5f246dc9bcd67"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:869ca8312fe529215be5b801698ad78f5155881b5dd9a6f6b86bf291ba9a783f"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:82fb0814103557996cbec835bc7301347b6af19e0789d5af665a441bca07b083"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-win32.whl", hash = "sha256:97c2c78f5981051c0d5e6a37d5c03f82b5cd5b90061fe57ce0a96acdfaf5111d"},
+    {file = "jsonschema_rs-0.28.1-cp311-cp311-win_amd64.whl", hash = "sha256:9fda4bad4a93fd86426f015d9e3acbbd9620bfb9d500e537a3c63a277dfddfb4"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:d0ace7084b2e0b9368ec8df3b5a20de28b181bc7bbcaf2572efc7c88f5de3472"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:8a42ba058949e5bdfdc2a9bb5b9a78d8a6d8858cc0cba9eeef7af23961027a19"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:171f0ee4974db5137c5a1daf6f9b2c92112a7019e99cc8945d00eea5e1495e42"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3c3c3fafeffe7d46168ab20ac27209c7840355dc91dead3b7f64a66724827d12"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:687ea01b48b0debd291d25b5780fc05df48bb9c2125aa2880f5a12bf06dc60e4"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-win32.whl", hash = "sha256:ef8afad7501c1cc500d6de4f29213a3be8f54344ec242c4715344eae75507236"},
+    {file = "jsonschema_rs-0.28.1-cp312-cp312-win_amd64.whl", hash = "sha256:a4c5d61108a112844f2d4c42b19b3d48da747742175e1a1144198c40a74c5d5f"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:fe8c5404b26e03c0eacd1aaadc0b1e5e225ca386d2551f9b4e41303622c36e0d"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:f802b0417974b474639b00973362518ec275c18385d7f1ad83640f6d6d8bc24c"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:462f1d4f78c235f4d5318dd2d32d036827f3ab0a573f3de970a14e36f01f76f6"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b2f6b1a4932513d94346fbc1f2dfd0324ae173b18a2920c078f5c888511365a4"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:783b8d102638a73cbc965b27c24776424ad3aaaeb10b9293d05ff3036d35a6f0"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-win32.whl", hash = "sha256:0aa3f2c91e5c064e3721dac279d2356f2d14b6816d5fede82fb5c747e78b14e8"},
+    {file = "jsonschema_rs-0.28.1-cp313-cp313-win_amd64.whl", hash = "sha256:0863c5d0cd0e3015b363a06d6b6ed210c7bd64a8f07b344f27701c2596b821c6"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:3b789896af1bca0d9d70d08ab96c5ada5589fcf088cc1a71cc144abac7d5026c"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-macosx_10_12_x86_64.whl", hash = "sha256:2e97aac95c44ca13a6a8955405701b2b4013266f18eb464eb885184bc31ac09a"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:4887fc4968c31945808d94030e98354a89ca7e909b76ef5139bae4075af0795f"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7be13db251e7bb7f6e39f120200def9f88038c75c9beb86b0655f2397c78a544"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2e31cc93c7af292e969077f2f832729e7cb0f893fee65d5cbb5a14de88f8e588"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-win32.whl", hash = "sha256:f2748273648e8e75da7377ad6ef10f27a5ea22c65784d9c303ed539d0cb0342b"},
+    {file = "jsonschema_rs-0.28.1-cp38-cp38-win_amd64.whl", hash = "sha256:6937a5ffb95da75c90dcb824e596509be278774329d2438ccc3bbb1d6b4a3734"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:12f10b4004d93898084ac286871a307c39cd941688e976c78f937f1eb289ccf5"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-macosx_10_12_x86_64.whl", hash = "sha256:736882f952550aa0f92a83ce241f238c5f8af6454afed7202f7ad59d8b569c45"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:6ba678ad49e1efff807c076ad752220c11cd56b74296522c0338883f20177117"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e32fa7138687466a630f5b0d5d506098defba69ea22f4c21c8cf8344d135bc7d"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a4719a46cefd2fa0936e4b6610a7a581789e0a1aa7ef0122367a9391f53c8a74"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-win32.whl", hash = "sha256:140691b9213e4a3adc66b30c6fd78dcc6475d77c8f5f3f25d49386e95a24ffb2"},
+    {file = "jsonschema_rs-0.28.1-cp39-cp39-win_amd64.whl", hash = "sha256:5c03bef27cd1585f6d604bd076c5c287d9ec16dd34f96a4ab96b3aa5a68cb4b2"},
+    {file = "jsonschema_rs-0.28.1.tar.gz", hash = "sha256:a9fe29c80a830de8dc5e18dd4761208254b99a65266199a0ef78c48f6d8c5373"},
+]
+
+[package.extras]
+bench = ["fastjsonschema (>=2.20.0)", "jsonschema (>=4.23.0)", "pytest-benchmark (>=4.0.0)"]
+tests = ["flask (>=2.2.5)", "hypothesis (>=6.79.4)", "pytest (>=7.4.4)"]
+
+[[package]]
 name = "jsonschema-specifications"
 version = "2024.10.1"
 description = "The JSON Schema meta-schemas and vocabularies, exposed as a Registry"
@@ -7020,4 +7076,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12.*, <4.0"
-content-hash = "080db555e78798d38801a750531ad4d041423b3100e86611b3d79bf6f6ec3f40"
+content-hash = "86374b1054147295edf25136f8c53a1ce421b8b80c1416ec5f0231cfc6796555"

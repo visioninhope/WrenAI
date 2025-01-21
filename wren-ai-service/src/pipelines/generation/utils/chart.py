@@ -1,11 +1,10 @@
 import logging
 from typing import Any, Dict, Literal, Optional
 
+import jsonschema_rs
 import orjson
 import pandas as pd
 from haystack import component
-from jsonschema import validate
-from jsonschema.exceptions import ValidationError
 from pydantic import BaseModel, Field
 
 logger = logging.getLogger("wren-ai-service")
@@ -304,7 +303,8 @@ class ChartGenerationPostProcessor:
                 ] = "https://vega.github.io/schema/vega-lite/v5.json"
                 chart_schema["data"] = {"values": sample_data}
 
-                validate(chart_schema, schema=vega_schema)
+                jsonschema_rs.validate(vega_schema, chart_schema)
+                # validate(chart_schema, schema=vega_schema)
 
                 if remove_data_from_chart_schema:
                     chart_schema["data"]["values"] = []
@@ -324,7 +324,7 @@ class ChartGenerationPostProcessor:
                     "chart_type": chart_type,
                 }
             }
-        except ValidationError as e:
+        except jsonschema_rs.ValidationError as e:  # ValidationError as e:
             logger.exception(f"Vega-lite schema is not valid: {e}")
 
             return {
