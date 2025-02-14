@@ -11,6 +11,8 @@ from haystack import Document
 from langfuse.decorators import langfuse_context, observe
 from tqdm.asyncio import tqdm_asyncio
 
+from src.core.pipeline import PipelineComponent
+
 sys.path.append(f"{Path().parent.resolve()}")
 
 from eval import EvalSettings
@@ -23,6 +25,7 @@ from eval.metrics import (
     ExactMatchAccuracy,
     ExecutionAccuracy,
     FaithfulnessMetric,
+    LMasJudgeExample,
 )
 from eval.utils import (
     engine_config,
@@ -287,7 +290,11 @@ class GenerationPipeline(Eval):
         ]
 
     @staticmethod
-    def metrics(engine_info: dict, enable_semantics_comparison: bool) -> dict:
+    def metrics(
+        engine_info: dict,
+        enable_semantics_comparison: bool,
+        component: PipelineComponent,
+    ) -> dict:
         return {
             "metrics": [
                 AccuracyMetric(
@@ -299,6 +306,7 @@ class GenerationPipeline(Eval):
                 # this is for spider dataset, rn we temporarily disable it
                 ExactMatchAccuracy(),
                 ExecutionAccuracy(),
+                LMasJudgeExample(**component),
             ],
             "post_metrics": [],
         }
@@ -397,7 +405,11 @@ class AskPipeline(Eval):
         ]
 
     @staticmethod
-    def metrics(engine_info: dict, enable_semantics_comparison: bool) -> dict:
+    def metrics(
+        engine_info: dict,
+        enable_semantics_comparison: bool,
+        component: PipelineComponent,
+    ) -> dict:
         return {
             "metrics": [
                 AccuracyMetric(
@@ -412,6 +424,7 @@ class AskPipeline(Eval):
                 # this is for spider dataset, rn we temporarily disable it
                 ExactMatchAccuracy(),
                 ExecutionAccuracy(),
+                LMasJudgeExample(**component),
             ],
             "post_metrics": [],
         }
@@ -444,13 +457,20 @@ def init(
 
 def metrics_initiator(
     pipeline: str,
-    engine_info: dict,
+    dataset: dict,
+    pipe_components: dict[str, PipelineComponent],
     enable_semantics_comparison: bool = True,
 ) -> dict:
+    engine_info = engine_config(dataset["mdl"], pipe_components)
+    component = pipe_components["evaluation"]
     match pipeline:
         case "retrieval":
             return RetrievalPipeline.metrics(engine_info)
         case "generation":
-            return GenerationPipeline.metrics(engine_info, enable_semantics_comparison)
+            return GenerationPipeline.metrics(
+                engine_info, enable_semantics_comparison, component
+            )
         case "ask":
-            return AskPipeline.metrics(engine_info, enable_semantics_comparison)
+            return AskPipeline.metrics(
+                engine_info, enable_semantics_comparison, component
+            )
