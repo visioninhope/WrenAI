@@ -26,6 +26,8 @@ from eval.metrics import (
     ExecutionAccuracy,
     FaithfulnessMetric,
     QuestionCoherenceJudge,
+    ReasoningValidityJudge,
+    SqlSemanticsJudge,
 )
 from eval.utils import (
     engine_config,
@@ -307,6 +309,8 @@ class GenerationPipeline(Eval):
                 ExactMatchAccuracy(),
                 ExecutionAccuracy(),
                 QuestionCoherenceJudge(**component),
+                ReasoningValidityJudge(**component),
+                SqlSemanticsJudge(**component),
             ],
             "post_metrics": [],
         }
@@ -425,6 +429,8 @@ class AskPipeline(Eval):
                 ExactMatchAccuracy(),
                 ExecutionAccuracy(),
                 QuestionCoherenceJudge(**component),
+                ReasoningValidityJudge(**component),
+                SqlSemanticsJudge(**component),
             ],
             "post_metrics": [],
         }
